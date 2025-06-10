@@ -1,0 +1,21 @@
+services:
+   boilerplate-service:
+    build: 
+      context: .
+      dockerfile: ./docker/dockerfile
+    container_name: boilerplate-service
+    hostname: boilerplate
+    restart: unless-stopped
+    ports:
+      - "4600:80"
+    networks:
+      - boilerplate-net
+    mem_limit: 64m
+    mem_reservation: 32m
+
+volumes:
+  redpanda-data:
+
+networks:
+  boilerplate-net:
+    driver: bridge

@@ -1,0 +1,52 @@
+{
+    "root": true,
+    "ignorePatterns": ["projects/**/*"],
+    "overrides": [
+        {
+            "files": ["*.ts"],
+            "extends": [
+                "plugin:@angular-eslint/recommended",
+                "plugin:@typescript-eslint/recommended",
+                "plugin:@typescript-eslint/recommended-requiring-type-checking",
+                "plugin:@angular-eslint/template/process-inline-templates",
+                "prettier"
+            ],
+            "parserOptions": {
+                "project": ["tsconfig.json"],
+                "createDefaultProgram": true
+            },
+            "rules": {
+                "@angular-eslint/component-class-suffix": [
+                    "error",
+                    {
+                        "suffixes": ["Component"]
+                    }
+                ],
+                "@typescript-eslint/explicit-function-return-type": "off",
+                "@typescript-eslint/no-explicit-any": "warn",
+                "@typescript-eslint/no-inferrable-types": "off",
+                "@typescript-eslint/no-unused-vars": [
+                    "warn",
+                    {
+                        "argsIgnorePattern": "^_",
+                        "varsIgnorePattern": "^_"
+                    }
+                ],
+                "no-console": [
+                    "warn",
+                    {
+                        "allow": ["warn", "error"]
+                    }
+                ],
+                "prettier/prettier": "error"
+            }
+        },
+        {
+            "files": ["*.html"],
+            "extends": ["plugin:@angular-eslint/template/recommended"],
+            "rules": {
+                "@angular-eslint/template/no-negated-async": "off"
+            }
+        }
+    ]
+}

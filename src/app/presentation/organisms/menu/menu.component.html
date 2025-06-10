@@ -1,0 +1,8 @@
+<ul class="container">
+    @for (item of items; track $index) {
+        @if ($index !== 0) {
+            <hr class="container__hr"/>
+        }
+        <li app-menu-item [data]="item"></li>
+    }
+</ul>

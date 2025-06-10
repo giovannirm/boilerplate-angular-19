@@ -1,0 +1,44 @@
+# Node modules
+node_modules
+
+# Output folder
+dist
+build
+
+# Environment files
+src/environments
+
+# Compiled output
+out
+coverage
+
+# Angular build cache
+.angular
+
+# IDE specific files
+.vscode
+.idea
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Misc
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Generated files
+*.log
+
+# Don't format specific config files
+*.snap
+
+# Ignore assets (optional, if you don’t want Prettier to touch your static assets)
+src/assets
+
+# Ignore styles if you prefer to handle them differently (optional)
+# src/styles.scss
+
+# Ignore all HTML files (optional, if you only want to format TS and JS)
+# **/*.html

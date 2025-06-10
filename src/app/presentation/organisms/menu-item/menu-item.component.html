@@ -1,0 +1,41 @@
+<ng-container *ngIf="isItem(data)">
+    <!-- SUBITEMS -->
+    <a *ngIf="data.items && data.visible === true" class="item" (click)="toggleExpand()">
+        @if (data.img) {
+        <img src="/assets/icons/sidebar/{{ data.img.src }}.svg" [alt]="data.img.alt" />
+        }
+        <div class="item__collapse">
+            <span class="item__span">{{ data.label }}</span>
+            <img [src]="srcExpanded" alt="expand-less" />
+        </div>
+    </a>
+
+    <!-- ITEMS  -->
+    <a
+        *ngIf="!data.items && data.visible"
+        [routerLink]="data.routerLink"
+        routerLinkActive="item-active"
+        #rla="routerLinkActive"
+        class="item"
+    >
+        @if (data.img) {
+        <img [src]="getImgSrc(data.img, rla.isActive)" [alt]="data.img.alt" />
+        }
+        <span
+            [class]="{
+                'item__not-img': !data.img
+            }"
+            class="item__span"
+        >
+            {{ data.label }}
+        </span>
+    </a>
+</ng-container>
+
+<ng-container *ngIf="isItemGroup(data)">
+    <ul [@collapse]="isExpanded ? 'expanded' : 'collapsed'">
+        @for (item of data.items; track $index) {
+        <li app-menu-item [data]="item"></li>
+        }
+    </ul>
+</ng-container>

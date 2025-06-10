@@ -1,0 +1,112 @@
+.header
+    width: 100%
+    height: 5.625rem
+    border-bottom: 1px solid var(--border-border-neutral-primary)
+    background: var(--surface-surface-reverse)
+    top: 0
+    left: 0
+    z-index: 5
+    user-select: none
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05)
+
+.nav
+    height: 100%
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 1rem 2.5rem
+
+    &__menu
+        display: flex
+        gap: 1rem
+        align-items: center
+
+        &__img
+            cursor: pointer
+
+.imagootype
+    display: flex
+    gap: 1rem
+    cursor: pointer
+
+    &__isotype
+        width: 3.5rem
+        height: 3.5rem
+    
+    &__logotype
+        width: 8rem
+        height: 3.5rem
+
+.menu
+    &__profile
+        display: flex
+        flex-direction: column
+
+        &__icon
+            width: 2rem
+            height: 2rem
+            border-radius: 50%
+            cursor: pointer
+
+.profile
+    display: flex
+    flex-direction: column
+    align-self: flex-end
+    width: 14rem
+
+    &__header
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        gap: 0.5rem
+        padding: 0.75rem 1rem
+        border-bottom: 2px solid var(--border-border-neutral-primary)
+
+        &__user
+            color: var(--text-text-brand-primary)
+            font-size: 0.875rem
+            font-style: normal
+            font-weight: 700
+            line-height: normal
+
+        &__account-type
+            color: var(--text-text-neutral-secondary)
+            font-size: 0.875rem
+            font-style: normal
+            font-weight: 400
+            line-height: normal
+
+    &__body
+        display: flex
+        gap: 0.75rem
+        align-items: center
+        padding: 0.5rem 1rem
+        cursor: pointer
+        font-size: 0.875rem
+        font-weight: 400
+        line-height: 1.05rem
+        text-align: left
+        color: var(--text-text-neutral-secondary)
+
+        &:hover
+            color: var(--text-text-brand-primary)
+            background-color: var(--surface-surface-brand-secondary)
+
+    &__footer
+        display: flex
+        gap: 0.75rem
+        align-items: center
+        padding: 0.5rem 1rem
+        cursor: pointer
+
+        &__logout
+            color: var(--text-text-destructive-default)
+            font-size: 0.875rem
+            font-style: normal
+            font-weight: 400
+            line-height: normal
+
+@media (width < 768px)
+    .nav
+        padding: 1rem 2rem

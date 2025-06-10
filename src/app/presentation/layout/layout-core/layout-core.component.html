@@ -1,0 +1,14 @@
+<div class="container">
+    <app-header />
+    <div class="container__content">
+        <app-sidebar />
+        <main
+            class="container__main"
+            [ngClass]="{
+                'container__main-withSidebar': !isSidebarVisible
+            }"
+        >
+            <router-outlet />
+        </main>
+    </div>
+</div>
